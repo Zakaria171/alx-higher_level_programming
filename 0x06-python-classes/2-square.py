@@ -8,6 +8,6 @@ class Square:
         """constructor"""
         self.__size = size
         if (isinstance(size, int) is False):
-            print("size must be an integer")
+            raise TypeError("size must be an integer")
         elif size < 0:
-            print("size must be >= 0")
+            raise ValueError("size must be >= 0")
