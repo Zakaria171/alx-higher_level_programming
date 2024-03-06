@@ -7,6 +7,7 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """constructor"""
         self.__size = size
+        self.__position = position
     """calculate the square's area"""
     def area(self):
         return (self.__size * self.__size)
@@ -25,6 +26,7 @@ class Square:
             raise ValueError("position must be a tuple of 2 positive integers")
         if not all(isinstance(i, int) and i >= 0 for i in value):
             raise ValueError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     @property
     def size(self):
@@ -43,12 +45,11 @@ class Square:
     def my_print(self):
         if self.__size == 0:
             print("")
-        else:
-            for i in range(0, self.__position[1]):
-                print("")
-            for j in range(0, self.__size):
-                for k in range(0, self.__position[0]):
-                    print(" ", end='')
-                for n in range(0, self.__size):
-                    print("#", end='')
-                print("")
+        for i in range(0, self.__position[1]):
+            print("")
+        for j in range(0, self.__size):
+            for k in range(0, self.__position[0]):
+                print(" ", end='')
+            for n in range(0, self.__size):
+                print("#", end='')
+            print("")
