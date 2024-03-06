@@ -6,8 +6,8 @@ class Square:
     """create a class"""
     def __init__(self, size=0, position=(0, 0)):
         """constructor"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
     """calculate the square's area"""
     def area(self):
         return (self.__size * self.__size)
